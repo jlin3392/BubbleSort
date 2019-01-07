@@ -16,4 +16,33 @@ public class SortingUtil {
         return arr;
     }
 
+    public static boolean checkSort(int[] arr) {
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i] > arr[i+1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean checkSum(int[] before, int[] after) {
+        int sumA = 0;
+        int sumB = 0;
+
+        if (before.length != after.length) {
+            return false;
+        } else {
+            for (int i = 0; i < before.length; i++) {
+                sumA = sumA + before[i];
+                sumB = sumB + after[i];
+            }
+        }
+
+        if (sumA != sumB) {
+            return false;
+        }
+
+        return true;
+    }
+
 }
